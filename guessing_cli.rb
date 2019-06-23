@@ -7,9 +7,12 @@ def run_guessing_game
   response = gets.chomp
   if response == "exit"
     puts "Goodbye!"
-  elsif response == random
+    break
+  elsif response.to_i == random
     puts "You guessed the correct number!"
+  elsif response.to_i != random
+      puts "The computer guessed #{random}."
   else
-    puts "The computer guessed #{random}."
+    puts "Invalid input."
   end
 end
